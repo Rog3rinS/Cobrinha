@@ -75,6 +75,37 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </section>
+
+      {/* prova social, valor promovido */}
+      <section className="bg-slate-100 py-12">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
+          <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
+            <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+              O que nossos <span className="relative px-2 text-green-600">clientes</span> dizem?
+            </h2>
+            <img src="/snake-2.png" className="w-24 order-0 lg:order-2" />
+          </div>
+
+          <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0
+          lg:max-w-none lg:grid-cols-2 gap-y-16">
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>"Eu simplesmente amei minha capa personalizada! Ficou exatamente como eu imaginei e trouxe ainda mais personalidade para o meu celular. A qualidade do material é excelente e dá para perceber que foi feita com cuidado e atenção aos detalhes. Além disso, o processo de personalização foi super fácil e rápido."</p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <img src="/users/user-1.png" className="rounded-full h-12 w-12 object-cover" />
+              </div>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </section>
     </div>
   );
 }
