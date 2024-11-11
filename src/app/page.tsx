@@ -1,11 +1,12 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phonee from "@/components/Phonee";
+import { Reviews } from "@/components/Reviews";
 import { Check, Phone, Star } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-slate-50 ">
+    <div className="bg-slate-100 ">
       <section>
         <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
           {/* Imagem da cobrinha, texto principal, e frase de efeito */}
@@ -88,6 +89,7 @@ export default function Home() {
 
           <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0
           lg:max-w-none lg:grid-cols-2 gap-y-16">
+            {/* Primeira review de usuario */}
             <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
               <div className="flex gap-0.5 mb-2">
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
@@ -101,10 +103,45 @@ export default function Home() {
               </div>
               <div className="flex gap-4 mt-2">
                 <img src="/users/user-1.png" className="rounded-full h-12 w-12 object-cover" />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Jonathan</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="h-4 w-4 mt-0.3 stroke-[3px] text-green-600" />
+                    <p className="text-sm">Compra verificada</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* segunda review de usuario */}
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>"Fiquei super satisfeita com minha capa personalizada! A impressão ficou nítida e as cores são exatamente como eu esperava. O material é resistente e encaixa perfeitamente no celular, protegendo sem comprometer o design. O processo de criação foi simples e rápido, e minha capa chegou bem embalada."</p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <img src="/users/user-2.png" className="rounded-full h-12 w-12 object-cover" />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Joice</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="h-4 w-4 mt-0.3 stroke-[3px] text-green-600" />
+                    <p className="text-sm">Compra verificada</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </MaxWidthWrapper>
+
+        <div className="pt-16">
+          <Reviews />
+        </div>
       </section>
     </div>
   );
