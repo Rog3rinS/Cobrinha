@@ -1,11 +1,14 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phonee from "@/components/Phonee";
-import { Check, Phone, Star } from "lucide-react";
+import { Reviews } from "@/components/Reviews";
+import { buttonVariants } from "@/components/ui/button";
+import { ArrowRight, Check, Phone, Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="bg-slate-50 ">
+    <div className="bg-slate-100 ">
       <section>
         <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
           {/* Imagem da cobrinha, texto principal, e frase de efeito */}
@@ -88,6 +91,7 @@ export default function Home() {
 
           <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0
           lg:max-w-none lg:grid-cols-2 gap-y-16">
+            {/* Primeira review de usuario */}
             <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
               <div className="flex gap-0.5 mb-2">
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
@@ -101,11 +105,97 @@ export default function Home() {
               </div>
               <div className="flex gap-4 mt-2">
                 <img src="/users/user-1.png" className="rounded-full h-12 w-12 object-cover" />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Jonathan</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="h-4 w-4 mt-0.3 stroke-[3px] text-green-600" />
+                    <p className="text-sm">Compra verificada</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* segunda review de usuario */}
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>"Fiquei super satisfeita com minha capa personalizada! A impressão ficou nítida e as cores são exatamente como eu esperava. O material é resistente e encaixa perfeitamente no celular, protegendo sem comprometer o design. O processo de criação foi simples e rápido, e minha capa chegou bem embalada."</p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <img src="/users/user-2.png" className="rounded-full h-12 w-12 object-cover" />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Joice</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="h-4 w-4 mt-0.3 stroke-[3px] text-green-600" />
+                    <p className="text-sm">Compra verificada</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </MaxWidthWrapper>
+
+        {/* Animacao infernal  */}
+        <div className="pt-16">
+          <Reviews />
+        </div>
       </section>
+
+      {/* Aqui mostra a foto se transformando em uma capinha  */}
+      <div>
+        <section>
+          <MaxWidthWrapper className="py-24">
+            <div className="mb-12 px-6 lg:px-8">
+              <div className="mx-auto max-w-2xl sm:text-center">
+                <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+                  Carregue sua foto e adquira <span className="relative px-2 bg-green-600 text-white">sua propria capinha </span> agora!
+                </h2>
+              </div>
+            </div>
+
+            <div className="mx-auto max-w-6xl px-6 py-6 lg:px-8">
+              <div className="relative flex flex-col items-center md:grid grid-cols-2 gap-40">
+                <img src="/arrow.png" className="absolute top-[25rem] md:top-1/2 -translate-y-1/2 z-10 left-1/2 -translate-x-1/2 rotate-90 md:rotate-0" />
+
+                <div className="relative h-80 md:h-full w-full md:justify-self-end max-w-sm rounded-xl bg-gray-900/5 ring-inset ring-gray-900/10 lg:rounded-2xl">
+                  <img src="/horse.jpg" className="rounded-md object-cover bg-white shadow-2xl ring-1 ring-gray-900/10 h-full w-full" />
+                </div>
+
+                <Phonee className="w-60" imgSrc="/horse_phone.jpg" />
+              </div>
+            </div>
+
+            <ul className="mx-auto mt-12 max-w-prose sm:text-lg space-y-2 w-fit">
+              <li className="fit">
+                <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
+                Material de silicone de alta qualidade
+              </li>
+              <li className="fit">
+                <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
+                Revestimento resistente a arranhões e impressões digitais
+              </li>
+              <li className="fit">
+                <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
+                Compatível com carregamento sem fio
+              </li>
+              <li className="fit">
+                <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
+                Garantia de impressão de 5 anos
+              </li>
+
+              <div className="flex justify-center py-2">
+                <Link className={buttonVariants({ size: "lg", className: "mx-auto mt-8" })} href="/configure/upload">Create your case now <ArrowRight className="h-4 w-4 ml-1.5" /> </Link>
+              </div>
+            </ul>
+          </MaxWidthWrapper>
+        </section>
+      </div>
     </div>
   );
 }
