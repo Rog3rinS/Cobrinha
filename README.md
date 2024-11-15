@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cobra Case Website
+
+Welcome to the **Cobra Case Website** repository! This project is a web application built using Next.js and showcases various examples of web development.
 
 ## Getting Started
 
